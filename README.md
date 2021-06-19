@@ -1,27 +1,54 @@
-# BookingWeb
+# booking web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+web for show bookings
 
-## Development server
+## Tópicos
+*  **[📝 Requerimientos / tecnologias](#-requerimientos)**
+*  **[🚀 Solucion](#-Solucion)**
+*  **[🗂 Estructura de Directorios](#-estructura-de-directorios)**
+*  **[👓 Pruebas](#-pruebas)**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 📝 Requerimientos / Tecnologias
+```
+Nodejs 14.16.0
+Angular 11.2.4
+```
+## 🚀 Solucion
 
-## Code scaffolding
+Utilizando el framework Angular bajo un servidor nodejs se construye una web dinámica que contemplan un login de usuario y un listado de bookings consultando un api rest
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🗂 Estructura de Directorios
+```
+📦 resume-api 
+│
+│  
+└─📁 src                  Código fuente
+│ │
+│ └─📁 app               componentes, módulos, servicios, utils
+│ │
+│ └─📁 assets            archivos
+│ │       
+│ └─📁 environments      Configuracion de ambientes
+│
+└─📄 README.md            Documentacion del software
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 👓 Pruebas
+### Ejecutar
+1. Para Ejecutar el proyecto se debe clonar, luego de clonar se deben de descargar las dependencias, y luego iniciar
+>comandos:
+```
+git clone git@github.com:wrumbos/booking-web.git
+cd booking-web
+npm install
+ng serve
+```
+### Home pagina simple que contiene un titulo
+![](resources/images/1.png)
+### inicio de session pagina contiene un formulario para inciar session contempla validaciones
+![](resources/images/2.png)
+![](resources/images/3.png)
+![](resources/images/4.png)
+![](resources/images/5.png)
+### booking al lograr un inicio de session exitoso a los usuarios puede consultar los bookings en donde se tendra una lista con las posibilidades de los campos id y precio filtar y ordenar
+![](resources/images/6.png)

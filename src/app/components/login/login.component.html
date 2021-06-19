@@ -1,0 +1,72 @@
+<div class="col-md-12" xmlns="http://www.w3.org/1999/html">
+  <div class="card card-container">
+    <h2>Inicio de Session</h2>
+    <br>
+    <form
+      *ngIf="!isLoggedIn"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="username">Correo/Usuario</label>
+        <input
+          type="email"
+          class="form-control"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          email
+          #username="ngModel"
+        />
+        <div class="alert-danger" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors.required">Correo/Usuario es un campo obligatorio</div>
+          <div *ngIf="username.errors.email">
+            Correo/Usuario debe poseer un formato valido
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="4"
+          #password="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="password.errors && f.submitted"
+        >
+          <div *ngIf="password.errors.required">Contraseña es un campo obligatorio</div>
+          <div *ngIf="password.errors.minlength">
+            Contraseña debe poseer 4 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Inicio de sesion
+        </button>
+      </div>
+      <div class="form-group">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="f.submitted && isLoginFailed"
+        >
+          No se puede iniciar sesión: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Bienvenido {{ fullName }}
+    </div>
+  </div>
+</div>
